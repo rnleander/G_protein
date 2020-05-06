@@ -17,7 +17,8 @@ k12=6.85;
 
 
 ac=.001;
-%The value above was found, it does not match the value in the paper. 
+%The value above is the value we used for modeling immune cells. It is 
+%lower than that estimated in myocytes, which is given below.
 %ac=.029;
 c5ar=.4;
 ep=.004;
