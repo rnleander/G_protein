@@ -15,7 +15,7 @@ pge=.010;
 % Set the factor by which beta-gamma binding increases the rate of cAMP 
 %synthesis.
 %C1=11;
-%The above was comented out (5/1/2020), this parameter is set inside LHS2
+%The above was comented out (5/1/2020), this parameter is set inside gingi2
 
 for i=1:length(bg)
     f=@gingi2;
@@ -57,6 +57,8 @@ c5a=(0:.00001:.0001);
 
  end
 end
+%get the value of C1 used in these simulations for labeling plots
+[~,C1]=gingi2(1,y0,1,1);
  
 %% Save the workspace
 save gingi_surf_plot_c5_bg_paper.mat;
@@ -65,11 +67,11 @@ surf(10^3*c5a,bg,cAMPtp(:,:,3),'LineWidth',2);
 xlabel('C5a (n{M})','FontSize', 14);
 ylabel('\beta\gamma (\mu{M})','Fontsize', 14);
 zlabel('cAMP (\mu{M})','FontSize',14);
-saveas(gcf,sprintf('cAMP_surface_PGE=%d_paper.fig',pge));
+saveas(gcf,sprintf('cAMP_surface_PGE=%d_C1=%d_paper.fig',pge,C1));
 
 surf(10^3*c5a,bg,alphastp(:,:,3),'LineWidth',2);
 xlabel('C5a (n{M})','FontSize', 14);
 ylabel('\beta\gamma (\mu{M})','Fontsize', 14);
 zlabel('\alpha_s^* (\mu{M})','FontSize',14);
-saveas(gcf,sprintf('alphas_surface_PGE=%d_paper.fig',pge));
+saveas(gcf,sprintf('alphas_surface_PGE=%d_C1=%d_paper.fig',pge,C1));
 

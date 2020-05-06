@@ -1,6 +1,6 @@
 % The r.h.s of the differential equation, for generating surface plots and 
 % dose-response curves
-function dydt=gingi2(t,y, c5a, pge)
+function [dydt,C1]=gingi2(t,y, c5a, pge)
 %% PARAMETERS %%
 
 gparameters;

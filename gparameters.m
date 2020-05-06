@@ -43,7 +43,7 @@ C1=11;
 
 
 % Parameter Labels 
-PRCC_var={'c5a', 'pge', 'bg', 'C1', 'k1', 'k2', 'k3', 'k4', 'k5', 'k6', 'k7', 'k8', 'K1', 'K4', 'K5', 'K6'};% 
+par_labels={'c5a', 'pge', 'bg', 'C1', 'k1', 'k2', 'k3', 'k4', 'k5', 'k6', 'k7', 'k8', 'K1', 'K4', 'K5', 'K6'};% 
 
 %% TIME SPAN OF THE SIMULATION
 t_end=1200; % length of the simulations. 1200=20 minutes

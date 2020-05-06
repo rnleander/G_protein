@@ -12,11 +12,10 @@ gparameters;
 % Set the concentration of beta-gamma subunits.
 bg=1.8;
 %bg=10.3;
-% Set the factor by which beta-gamma binding increases the rate of cAMP
-% production for the purpose of labeling plots. The parameter must be
-% altered within gingiLHS2 for simulations.
-%C1=1;
-C1=11;
+
+% Set C1, the factor by which beta-gamma binding increases the rate of cAMP
+% production for the purpose of labeling plots within gingiLHS2 for simulations.
+
 
 
 
@@ -57,6 +56,9 @@ c5a=(0:.00001:.0001);
 
  end
  end
+ 
+ %get the value of C1 used in these simulations for labeling plots
+[~,C1]=gingi2(1,y0,1,1);
 
  
 %% Save the workspace
@@ -65,7 +67,7 @@ surf(10^3*pge,10^3*c5a,cAMPtp(:,:,3),'LineWidth',2);
 ylabel('C5a (n{M})','FontSize', 14);
 xlabel('PGE_2 (n{M})','Fontsize', 14);
 zlabel('cAMP (\mu{M})','FontSize',14);
-saveas(gcf,sprintf('cAMP_surface_bg=%d_C1_paper=%d.fig',bg,C1));
+saveas(gcf,sprintf('cAMP_surface_bg=%d_C1=%d_paper.fig',bg,C1));
 
 surf(10^3*pge,10^3*c5a,alphastp(:,:,3),'LineWidth',2);
 ylabel('C5a (n{M})','FontSize', 14);
